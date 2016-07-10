@@ -15,6 +15,7 @@
   "dependencies": {
     "gulp": "^3.9.1",
     "gulp-ejs": "^2.1.2",
+    "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-watch": "^4.3.8"
   },
