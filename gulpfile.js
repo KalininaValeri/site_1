@@ -1,11 +1,16 @@
 var gulp = require('gulp');
 var ejs = require('gulp-ejs');
 var sass = require('gulp-sass');
+var rename = require('gulp-rename');
 
 gulp.task('ejs', function () {
-    gulp.src(['./*/template/page-main.ejs', './*/template/page-log.ejs', './*/template/page-info.ejs', './*/template/page-news.ejs', './*/template/page-services.ejs'])
+    gulp.src(['./src/**/*.ejs'])
+        .pipe(rename(function(path){
+            path.dirname = path.dirname.replace('template', 'dist-html');
+            return path;
+        }))
         .pipe(ejs({}, {ext: '.html'}))
-        .pipe(gulp.dest('./s1/html/'));
+        .pipe(gulp.dest('src'));
 });
 
 gulp.task('sass', function () {
